@@ -35,12 +35,25 @@ const config: Config = {
         '100%': {
           transform: "translateY(5px)"
         }
+      },
+      topTicketEntry: {
+        'from': {
+          transform: "translateY(50px)",
+          opacity: "0%",
+        },
+        'to': {
+          transform: "translateY(0)",
+          opacity: "100%"
+        }
       }
     },
     animation: {
       buttonAnimation: 'buttonAnimation 2s ease-in-out 1',
       menuIn: 'menuIn 0.3s ease-in-out 1 alternate',
-      bounceText: 'bounceText 1s linear infinite alternate 0s'
+      bounceText: 'bounceText 1s linear infinite alternate 0s',
+      topTicketEntry: 'topTicketEntry 0.5s ease-in',
+      topTicketEntry_delay1: 'topTicketEntry 0.5s ease-in 0.5s',
+      topTicketEntry_delay2: 'topTicketEntry 0.5s ease-in 1s',
     },
     colors: {
       'bg-dark': '#323745',

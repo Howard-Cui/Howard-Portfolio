@@ -5,10 +5,12 @@ import { DropDownNavProvider } from "@/contexts";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
+    
     <DropDownNavProvider>
       <DarkThemeProvider>
         <Component {...pageProps} />
       </DarkThemeProvider>  
     </DropDownNavProvider>
+    
   );
 }

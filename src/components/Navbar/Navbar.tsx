@@ -17,13 +17,13 @@ const Navbar = () => {
 
   const Navigators = () => navList.map(item => {
     return (
-      <li
+      <div
       className='hover:text-high-light hover:border-high-light-second
       border-b-[2px] border-b-[transparent] z-[1000] list-none font-[500]
       active:scale-[90%]'
       key={item.title}>
         <Link href={item.route}>{item.title}</Link>
-      </li>
+      </div>
     )
   })
 
@@ -35,7 +35,7 @@ const Navbar = () => {
   const handleOnClickBurger = () => setOpenNav(!openNav);
 
   return (
-    <nav className='w-[100%] h-[70px] flex justify-between items-center mt-9'>
+    <nav className='setted-width h-[70px] flex justify-between items-center mt-9'>
         <h1 className='font-bold text-[25px] first-letter:text-high-light-second'>
           Howard Cui
         </h1>
@@ -43,20 +43,20 @@ const Navbar = () => {
         {
           needBurgurMenu ? 
           <IconButton 
-          className="z-[1000]"
+          className="z-[1000000]"
           icon={!openNav ? 
           <GiHamburgerMenu size={"large"}/> 
           : <IoClose size={"large"}/>} 
           onClick={handleOnClickBurger}/>
           : (
           <>
-            <ul className='flex justify-between gap-8 font-[500]'>
+            <div className='flex justify-between gap-8 font-[500]'>
               {
                 <Navigators/>
               }
               < IconBtnSet/>
 
-            </ul>
+            </div>
           </>)
         }
         

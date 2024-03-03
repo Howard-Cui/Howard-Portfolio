@@ -3,22 +3,25 @@ import { FaReact, FaServer, FaCloud } from "react-icons/fa";
 import { TbDatabaseSearch } from "react-icons/tb";
 import { MdOutlineManageAccounts } from "react-icons/md";
 import { FaLaptopCode } from "react-icons/fa6";
+import { useInView } from 'react-intersection-observer';
 
 interface TechTicketProps {
-  icon: ReactNode, 
+  icon?: ReactNode, 
   title: string, 
   description: string
 }
 
-const TechTicket = ({
+export const TechTicket = ({
   icon,
   title,
   description,
 } : TechTicketProps) => {
+  const { ref, inView, entry } = useInView();
+
   return (
-    <div className='w-[300px] h-[160px] dark:bg-bg-dark bg-bg-light 
+    <div ref={ref} className={`w-[300px] h-[160px] dark:bg-bg-dark bg-bg-light 
     shadow-sm shadow-[#00000018] dark:shadow-[#ffffff1c]
-    flex flex-col justify-evenly p-3'>
+    flex flex-col justify-evenly p-3  ${inView ? "animate-topTicketEntry" : ""}`}>
       <div className='flex items-center gap-4 align-center'>
         { icon }
         <h3 className='font-bold'>{ title }</h3>
@@ -89,13 +92,13 @@ const TechStack = () => {
           <h3 className="font-[700] text-5xl">
             Tech Stacks
           </h3>
-          <p className="dark:text-[#a7a7a7] text-[#000000]">
+          <p className="dark:text-[#a7a7a7] text-[#000000] text-center">
             Those technologies that enabled me work efficently!
           </p>
 
           <div className="min-h-[70%] w-[100%] grid xl:grid-cols-3
           md:grid-cols-2 grid-cols-1 justify-items-between gap-4 justify-items-center
-          overflow-visible mt-11">
+          overflow-visible mt-11 animate-topTicketEntry">
             {
               techStackInfo.map(item => {
                 return (

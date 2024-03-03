@@ -1,5 +1,8 @@
 import Layout from "@/Layout";
-import { CareerExperience, HeroSection, TechStack } from "@/components";
+import { HeroSection, TechStack } from "@/components";
+import dynamic from "next/dynamic";
+
+const CareerExperience = dynamic(() => import("@/components").then(module => module.CareerExperience), {ssr: false})
 
 export default function Home() {
 
