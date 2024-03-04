@@ -60,7 +60,8 @@ const CareerExperience = () => {
 
   return (
     <div className={'flex flex-col justify-between items-center'}>
-      <div className="setted-width h-[200px] flex flex-col
+      <div className="setted-width md:translate-x-0
+      h-[200px] flex flex-col
         justify-evenly gap-3 items-center">
           <h3 className="font-[700] text-5xl">
             Career Experiences

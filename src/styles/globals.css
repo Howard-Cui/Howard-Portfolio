@@ -11,6 +11,6 @@
   }
 
   .setted-width {
-    @apply 2xl:w-[1228px] lg:w-[80%] md:w-[819px] w-[95%];
+    @apply 2xl:w-[1228px] lg:w-[80%] md:w-[819px] w-[95vw];
   }
 }

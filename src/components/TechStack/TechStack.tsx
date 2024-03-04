@@ -19,6 +19,9 @@ export const TechTicket = ({
   const { ref, inView, entry } = useInView();
 
   return (
+  <>
+  {
+    true && (
     <div ref={ref} className={`w-[300px] h-[160px] dark:bg-bg-dark bg-bg-light 
     shadow-sm shadow-[#00000018] dark:shadow-[#ffffff1c]
     flex flex-col justify-evenly p-3  ${inView ? "animate-topTicketEntry" : ""}`}>
@@ -30,7 +33,9 @@ export const TechTicket = ({
       <p className='text-[13px] dark:text-[#a7a7a7] text-[#000000]'>
         { description }
       </p>
-    </div>
+    </div> )
+  }
+  </>
   )
 }
 

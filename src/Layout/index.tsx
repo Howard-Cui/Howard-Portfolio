@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 // import { Navbar } from '@/components'
 import dynamic from 'next/dynamic';
+import { Footer } from '@/components';
 
 const Navbar = dynamic(() => import("@/components")
 .then(module => module.Navbar), { ssr: false })
@@ -34,6 +35,7 @@ const Layout = ({ children } : { children : React.ReactNode }) => {
       </div>
       <div className='h-[70px]'/>
       { children }
+      <Footer/>
     </div>
   )
 }
